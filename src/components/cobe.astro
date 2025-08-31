@@ -14,6 +14,7 @@ const globeMaxSize = 1000;
 	canvas.height = globeSize;
 
 	let phi = 0;
+    let globeInstance = null;
 
 	function computeGlobeSize(globeMaxSize) {
 		let size = globeMaxSize;
@@ -26,8 +27,8 @@ const globeMaxSize = 1000;
 
 	function addGlobe(canvas) {
 		const globe = createGlobe(canvas, {
-			width: globeSize,
-			height: globeSize,
+            width: canvas.width,
+            height: canvas.height,
 			phi: 0,
 			theta: 0,
 			dark: 0,
@@ -55,12 +56,20 @@ const globeMaxSize = 1000;
 		return globe;
 	}
 
-	addGlobe(canvas);
+    function resizeGlobe() {
+        globeSize = computeGlobeSize(globeMaxSize);
+        canvas.width = globeSize;
+        canvas.height = globeSize;
+        if (globeInstance && globeInstance.destroy) {
+            globeInstance.destroy();
+        }
+        globeInstance = addGlobe(canvas);
+    }
 
-	// TODO: Update the globe dimensions when the window is resized
-	//   window.addEventListener("resize", () => {
-	//     let globeSize = computeGlobeSize(globeMaxSize);
-	//     canvas.width = globeSize;
-	//     canvas.height = globeSize;
-	//   });
+    globeInstance = addGlobe(canvas);
+
+	// Update the globe dimensions when the window is resized
+    window.addEventListener("resize", () => {
+        resizeGlobe();
+    });
 </script>
