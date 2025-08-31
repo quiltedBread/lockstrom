@@ -1,8 +1,6 @@
 # [Lockstrom](https://lockstrom.com)
 
-This is Lockstrom's primary site made with [Astro](https://astro.build), [Tailwind](https://tailwindcss.com/) and [AlpineJS](https://alpinejs.dev/).
-
-### [🧪 Site preview →](https://lockstrom.com)
+This is the primary repository for [lockstrom.com](https://lockstrom.com) made with [Astro](https://astro.build), [Tailwind](https://tailwindcss.com/) and [AlpineJS](https://alpinejs.dev/).
 
 ---
 
