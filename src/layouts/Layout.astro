@@ -23,8 +23,8 @@ const resolvedImageWithDomain = new URL(
 const { title, lang = null } = Astro.props;
 
 const makeTitle = title
-	? `${title} | Astros`
-	: "Astros - Starter Template for Astro with Tailwind CSS";
+	? `${title} | Lockstrom`
+	: "Lockstrom - Software Development Agency";
 ---
 
 <!doctype html>
@@ -44,17 +44,17 @@ const makeTitle = title
 
 		<SEO
 			title={makeTitle}
-			description="Astros is a starter website template for Astro built with TailwindCSS and alpine js."
+			description="Lockstrom is a software development agency that builds secure, scalable software for mission-driven organizations across public and private sectors."
 			canonical={canonicalURL}
 			openGraph={{
 				basic: {
 					url: canonicalURL,
 					type: "website",
-					title: `Astros - Starter Template for Astro`,
+					title: `Lockstrom - Software Development Agency`,
 					image: resolvedImageWithDomain,
 				},
 				image: {
-					alt: "Astros Homepage Screenshot",
+					alt: "Lockstrom Homepage Screenshot",
 				},
 			}}
 		/>
