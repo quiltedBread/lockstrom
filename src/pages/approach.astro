@@ -1,0 +1,73 @@
+---
+import Container from "@components/container.astro";
+import Faq from "@components/faq.astro";
+import Pricing from "@components/pricing.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import Layout from "@layouts/Layout.astro";
+---
+
+<Layout title="Pricing">
+  <Container>
+    <!-- <Sectionhead>
+      <Fragment slot="title">Approach</Fragment>
+      <Fragment slot="desc">Affordable Excellence: See Our Pricing.</Fragment>
+    </Sectionhead> -->
+    <div class="mx-auto prose prose-lg dark:prose-invert mt-12 dark:text-gray-200">
+		<h1 class="text-4xl mb-3 lg:text-5xl font-bold lg:tracking-tight mt-1 lg:leading-tight dark:text-white">
+					Approach
+				</h1>
+		<p>
+        At Lockstrom, we believe that software should serve the mission—not
+        complicate it. Our approach is built on a foundation of clarity, trust,
+        and adaptability, tailored to meet the unique demands of state and
+        federal agencies.
+      </p>
+      <h2 class="text-2xl font-bold leading-10 tracking-tight text-gray-900 dark:text-white">Mission-Aligned Development</h2>
+      <p>
+        We start by listening. Every engagement begins with a deep understanding
+        of your operational goals, constraints, and success metrics. Whether
+        you're modernizing legacy infrastructure or launching a new digital
+        service, we align our solutions with your mission from day one.
+      </p>
+      <h2 class="text-2xl font-bold leading-10 tracking-tight text-gray-900 dark:text-white">Modular, Scalable Architecture</h2>
+      <p>
+        Lockstrom builds systems that grow with you. Our development philosophy
+        emphasizes modularity, maintainability, and performance—ensuring that
+        your software remains reliable and extensible across changing
+        requirements and evolving technologies.
+      </p>
+      <h2 class="text-2xl font-bold leading-10 tracking-tight text-gray-900 dark:text-white">Security-First Mindset</h2>
+      <p>
+        We embed security into every layer of our process. From access control
+        to data integrity, our solutions are designed to meet government-grade
+        compliance standards while remaining user-friendly and efficient.
+      </p>
+      <h2 class="text-2xl font-bold leading-10 tracking-tight text-gray-900 dark:text-white">Transparent Communication</h2>
+      <p>
+        We operate with full transparency—clear documentation, predictable
+        timelines, and open channels for feedback. Our clients are never left
+        guessing. Every milestone is tracked, every decision documented, and
+        every deliverable backed by accountability.
+      </p>
+      <h2 class="text-2xl font-bold leading-10 tracking-tight text-gray-900 dark:text-white">Agile Delivery, Real Results</h2>
+      <p>
+        Lockstrom combines agile methodologies with rigorous planning to deliver
+        fast, iterative results without sacrificing quality. We prototype early,
+        test often, and refine continuously—so your stakeholders see progress,
+        not promises.
+      </p>
+
+      <h2 class="text-2xl font-bold leading-10 tracking-tight text-gray-900 dark:text-white">Why Agencies Choose Lockstrom</h2>
+      <ul>
+        <li>U.S.-based development team</li>
+        <li>Experience with procurement workflows and compliance</li>
+        <li>Clean, audit-ready code and documentation</li>
+        <li>Flexible engagement models for short- and long-term projects</li>
+        <li>
+          Proven ability to deliver under tight timelines and complex scopes
+        </li>
+      </ul>
+    </div>
+    <Faq />
+  </Container>
+</Layout>
