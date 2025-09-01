@@ -10,9 +10,8 @@
     "secondary_button_text": "Return to Overview"
   },
   "header": {
-    "features": "Services",
-    "pricing": "Approach",
-    "blog": "Insights",
+    "approach": "Approach",
+    "services": "Services",
     "contact": "Contact",
     "primary_button_text": "Get Started",
     "secondary_button_text": "Client Login"
