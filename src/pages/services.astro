@@ -1,0 +1,59 @@
+---
+import Container from "@components/container.astro";
+import Faq from "@components/faq.astro";
+import Service from "@components/service.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import Layout from "@layouts/Layout.astro";
+
+const serviceData = [
+  {
+    name: "Software Development",
+    features: [
+      "Web, desktop, and mobile applications",
+      "API development and integration",
+      "Internal tools and platforms",
+    ],
+  },
+  {
+    name: "System Modernization",
+    features: [
+      "Legacy-to-cloud migrations",
+      "Data preservation and transformation",
+      "Refactoring and performance tuning",
+    ],
+  },
+  {
+    name: "Cloud Architecture & Deployment",
+    features: [
+      "Infrastructure as Code (IaC)",
+      "DevOps and CI/CD pipelines",
+      "Containerization and orchestration",
+    ],
+  },
+];
+---
+
+<Sectionhead>
+  <Fragment slot="title"></Fragment>
+  <Fragment slot="desc"></Fragment>
+</Sectionhead>
+
+<Layout title="Services">
+  <Container>
+    <div class="mx-auto max-w-4xl mt-20">
+      <h1
+        class="text-4xl mb-3 lg:text-5xl font-bold lg:tracking-tight mt-1 lg:leading-tight dark:text-white"
+      >
+        Services
+      </h1>
+      <p class="dark:text-white">
+        Lockstrom delivers software solutions that are secure, scalable, and
+        built to serve real-world problems.
+      </p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-20">
+      {serviceData.map((item) => <Service item={item} />)}
+    </div>
+    <Faq />
+  </Container>
+</Layout>
