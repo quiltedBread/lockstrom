@@ -1,83 +1,56 @@
 ---
 import Container from "@components/container.astro";
-import Sectionhead from "@components/sectionhead.astro";
+import Button from "@components/ui/button.astro";
 import Layout from "@layouts/Layout.astro";
-import { changeLanguage } from "i18next";
-
-changeLanguage("en");
-
-const contacts = [
-  {
-    title: "Marketing",
-    email: "marketing@lockstrom.com",
-    phone: "+1 (555) 555-5555",
-  },
-  {
-    title: "Human Resources",
-    email: "hr@lockstrom.com",
-    phone: "+1 (555) 555-5555",
-  },
-  {
-    title: "Finance",
-    email: "finance@lockstrom.com",
-    phone: "+1 (555) 555-5555",
-  },
-  {
-    title: "Research and Development",
-    email: "research@lockstrom.com",
-    phone: "+1 (555) 555-5555",
-  },
-];
 ---
 
 <Layout title="Contact">
   <Container>
-    <div class="mx-auto max-w-4xl mt-20 mt-12 dark:text-gray-200">
-      <div
-        class="mx-auto max-w-2xl space-y-16 divide-y divide-gray-100 lg:mx-0 lg:max-w-none"
-      >
-        <div class="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-3">
-          <div>
-            <h2
-              class="text-4xl font-bold tracking-tight text-gray-900 dark:text-white"
-            >
-              Departments
-            </h2>
-            <p class="mt-4 leading-7 text-gray-600 dark:text-gray-200">
-              Reach Out to Our Dedicated Team.
-            </p>
-          </div>
-          <div
-            class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:col-span-2 lg:gap-8"
+    <div
+      class="flex min-h-full items-center justify-center px-4 py-12 sm:px-6 lg:px-8"
+    >
+      <div class="w-full max-w-sm space-y-6">
+        <div>
+          <h2
+            class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900 dark:text-gray-100"
           >
-            {
-              contacts.map((item) => (
-                <div class="rounded-2xl bg-gray-50 dark:bg-stone-800 p-10">
-                  <h3 class="text-base font-semibold leading-7 text-gray-900 dark:text-white">
-                    {item.title}
-                  </h3>
-                  <dl class="mt-3 space-y-1 text-sm leading-6 text-gray-600 dark:text-white">
-                    <div>
-                      <dt class="sr-only">Email</dt>
-                      <dd>
-                        <a
-                          class="font-semibold text-stone-600 dark:text-white"
-                          href="mailto:collaborate@example.com"
-                        >
-                          {item.email}
-                        </a>
-                      </dd>
-                    </div>
-                    <div class="mt-1">
-                      <dt class="sr-only">Phone number</dt>
-                      <dd>{item.phone}</dd>
-                    </div>
-                  </dl>
-                </div>
-              ))
-            }
-          </div>
+            Contact Us
+          </h2>
+          <p class="dark:text-gray-200 text-center">
+            Reach Out to Our Dedicated Team.
+          </p>
         </div>
+        <form
+          action="https://formspree.io/f/xgvlzjgv"
+          method="POST"
+          class="space-y-6"
+        >
+          <div class="relative -space-y-px rounded-md shadow-sm">
+            <div
+              class="pointer-events-none absolute inset-0 z-10 rounded-md ring-1 ring-inset ring-gray-300"
+            >
+            </div>
+            <label for="email-address" class="sr-only">Email address</label>
+            <input
+              id="email-address"
+              type="email"
+              name="email"
+              autocomplete="email"
+              class="relative block px-4 w-full rounded-t-md border-0 py-1.5 text-gray-900 dark:text-gray-100 dark:bg-stone-950 ring-1 ring-inset ring-gray-100 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+              placeholder="Email address"
+              required
+            />
+            <label for="message" class="sr-only">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              class="relative block px-4 w-full border-0 py-1.5 text-gray-900 dark:text-gray-100 dark:bg-stone-950 ring-1 ring-inset ring-gray-100 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+              required
+              placeholder="Message"
+              rows="3"></textarea>
+          </div>
+          <Button class="w-full" size="sm" type="submit">Send</Button>
+        </form>
       </div>
     </div>
   </Container>
