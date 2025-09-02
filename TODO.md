@@ -1,7 +1,4 @@
 - Update opengraph.png
-- Update menu items
-- Add contact form
 - Removed unused pages/images
-- Update faq.astro
 - Update features.astro
-- Update phone numbers in contact.astro
+- Deploy w cloudflare
