@@ -1,5 +1,10 @@
 ---
 import Button from "@components/ui/button.astro";
+let showError = false;
+function handleLogin(e) {
+  e.preventDefault();
+  showError = true;
+}
 ---
 
 <div
@@ -13,7 +18,7 @@ import Button from "@components/ui/button.astro";
         Sign in
       </h2>
     </div>
-    <form class="space-y-6" action="#" method="POST">
+    <form id="login-form" class="space-y-6" action="#" method="POST">
       <div class="relative -space-y-px rounded-md shadow-sm">
         <div
           class="pointer-events-none absolute inset-0 z-10 rounded-md ring-1 ring-inset ring-gray-300"
@@ -68,11 +73,22 @@ import Button from "@components/ui/button.astro";
       <div>
         <Button class="w-full" size="sm">Sign in</Button>
       </div>
+      <div id="login-error" class="mt-4 text-red-600" style="display:none;">
+        Login failed. Please try again.
+      </div>
     </form>
-
     <!-- <p class="text-center text-sm leading-6 text-gray-500">
 			Not a member?
 			<Link style="muted" href="#" size="xs" class="text-left">Sign up</Link>
 		</p> -->
   </div>
 </div>
+
+<script type="module">
+  const form = document.getElementById("login-form");
+  const errorDiv = document.getElementById("login-error");
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    errorDiv.style.display = "block";
+  });
+</script>
