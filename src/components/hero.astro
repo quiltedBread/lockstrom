@@ -43,13 +43,14 @@ const { dynamic = true } = Astro.props;
         <h1
           class="text-4xl font-bold tracking-tight text-black dark:text-white sm:text-6xl"
         >
-          {t("hero.title")}
+          Software that delivers. Solutions that scale.
         </h1>
         <p class="mt-6 text-lg leading-8 text-gray-900 dark:text-gray-100">
-          {t("hero.subtitle")}
+          Lockstrom builds secure, scalable software for mission-driven
+          organizations across public and private sectors.
         </p>
         <div class="mt-10 flex items-center justify-center gap-x-2 md:gap-x-6">
-          <Link href="/contact">{t("hero.main_button_text")}</Link>
+          <Link href="/contact">Schedule a Consultation</Link>
           <!-- <Link href="/explore" style="muted">
 						{t("hero.secondary_button_text")}
 						<span aria-hidden="true" class="pl-1 text-black dark:text-white">
@@ -61,15 +62,7 @@ const { dynamic = true } = Astro.props;
       <div class="flex justify-center items-center mt-4 md:mt-8">
         {
           dynamic ? (
-            <>
-              <h2
-                class="text-2xl md:text-4xl max-w-2xl text-center font-bold tracking-tight text-black dark:text-white absolute"
-                style="line-height: 1.5"
-              >
-                {t("hero.globe_title")}
-              </h2>
-              <Cobe />
-            </>
+            <Cobe />
           ) : (
             <Image
               class="inline-block mt-12 md:mt-20"
