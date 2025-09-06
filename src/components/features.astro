@@ -1,75 +1,74 @@
 ---
-import Link from "@components/ui/link.astro";
-import { localizePath } from "astro-i18next";
-// @ts-ignore
 import { Icon } from "astro-icon/components";
 
 const features = [
-  {
-    title: "Software",
-    description:
-      "Custom Software Development — Tailored applications built to meet unique operational needs.",
-    icon: "bx:bxs-window-alt",
-  },
-  {
-    title: "Modernization",
-    description:
-      "System Modernization — Migrating and upgrading legacy systems with minimal disruption.",
-    icon: "bx:bxs-briefcase",
-  },
-  {
-    title: "Cloud Architecture",
-    description:
-      "Cloud Architecture & Deployment — Scalable infrastructure using AWS, Azure, and hybrid solutions.",
-    icon: "bx:bxs-data",
-  },
-  {
-    title: "Automation",
-    description:
-      "Data Integration & Automation — Streamlining workflows through smart APIs and backend logic.",
-    icon: "bx:bxs-bot",
-  },
-  {
-    title: "Compliance",
-    description:
-      "Security & Compliance — Ensuring systems meet industry standards and regulatory requirements.",
-    icon: "bx:bxs-file-find",
-  },
+    {
+        title: "Software",
+        description:
+            "Custom Software Development — Tailored applications built to meet unique operational needs.",
+        icon: "bx:bxs-window-alt",
+    },
+    {
+        title: "Modernization",
+        description:
+            "System Modernization — Migrating and upgrading legacy systems with minimal disruption.",
+        icon: "bx:bxs-briefcase",
+    },
+    {
+        title: "Cloud Architecture",
+        description:
+            "Cloud Architecture & Deployment — Scalable infrastructure using AWS, Azure, and hybrid solutions.",
+        icon: "bx:bxs-data",
+    },
+    {
+        title: "Automation",
+        description:
+            "Automation & Reporting — Streamlining workflows and enhancing data visibility.",
+        icon: "bx:bxs-bot",
+    },
+    {
+        title: "Compliance",
+        description:
+            "Security & Compliance — Ensuring systems meet industry standards and regulatory requirements.",
+        icon: "bx:bxs-file-find",
+    },
+    {
+        title: "Integration",
+        description:
+            "Integration & Support — Ongoing maintenance, support, and integration with existing tools.",
+        icon: "bx:bxs-file-find",
+    },
 ];
 ---
 
 <div class="relative mx-auto max-w-5xl px-6 lg:px-8">
-  <div class="mx-auto max-w-2xl lg:text-center">
-    <h2 class="text-base font-semibold leading-7 text-black dark:text-white">
-      Our Services
-    </h2>
-    <p
-      class="mt-2 text-3xl font-bold tracking-tight text-black dark:text-white sm:text-4xl"
-    >
-      Built for impact.
-    </p>
-    <p class="mt-6 text-lg leading-8 text-gray-900 dark:text-gray-100">
-      Lockstrom delivers custom software solutions tailored to operational
-      goals. From system modernization to cloud-native architecture, we help
-      agencies and enterprises move forward with confidence.
-    </p>
-  </div>
-  <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
-    <dl
-      class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3"
-    >
-      {
-        features.map((item) => (
-          <div class="flex flex-col">
-            <dt class="flex items-center gap-x-3 text-base font-semibold leading-7 text-black dark:text-white">
-              <div class="h-5 w-5 flex-none text-black dark:text-white">
-                <Icon name={item.icon} />
-              </div>
-              {item.title}
-            </dt>
-            <dd class="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-900 dark:text-gray-100">
-              <p class="flex-auto">{item.description}</p>
-              {/* <p class="mt-6">
+    <div class="mx-auto max-w-2xl lg:text-center">
+        <p
+            class="mt-2 text-3xl font-bold tracking-tight text-black dark:text-white sm:text-4xl"
+        >
+            Built for impact.
+        </p>
+        <p class="mt-6 text-lg leading-8 text-gray-900 dark:text-gray-100">
+            Lockstrom delivers custom software solutions tailored to operational
+            goals. We help organizations move forward with confidence.
+        </p>
+    </div>
+    <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
+        <dl
+            class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-3"
+        >
+            {
+                features.map((item) => (
+                    <div class="flex flex-col">
+                        <dt class="flex items-center gap-x-3 text-base font-semibold leading-7 text-black dark:text-white">
+                            <div class="h-5 w-5 flex-none text-black dark:text-white">
+                                <Icon name={item.icon} />
+                            </div>
+                            {item.title}
+                        </dt>
+                        <dd class="mt-2 flex flex-auto flex-col text-base leading-7 text-gray-900 dark:text-gray-100">
+                            <p class="flex-auto">{item.description}</p>
+                            {/* <p class="mt-6">
 								<Link href={item.url} style="muted" size="xs" class="leading-6 text-left text-black dark:text-white">
 									{t("features.learn_more")}{" "}
 									<span class="pl-1 text-black dark:text-white" aria-hidden="true">
@@ -77,10 +76,10 @@ const features = [
 									</span>
 								</Link>
 							</p> */}
-            </dd>
-          </div>
-        ))
-      }
-    </dl>
-  </div>
+                        </dd>
+                    </div>
+                ))
+            }
+        </dl>
+    </div>
 </div>
