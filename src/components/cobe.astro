@@ -24,7 +24,7 @@ const globeMaxSize = 1000;
     let size = globeMaxSize;
     const { innerWidth: width } = window;
     if (width < globeMaxSize) {
-      size = width - 300;
+      size = Math.max(width * 0.6, 200);
     }
     return size;
   }
