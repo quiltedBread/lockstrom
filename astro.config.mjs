@@ -11,7 +11,7 @@ import icon from "astro-icon";
 
 // https://astro.build/config
 export default defineConfig({
-	site: "https://quiltedbread.github.io",
+	site: "https://lockstrom.com",
 	vite: {
 		define: {
 			__DATE__: `'${new Date().toISOString()}'`,
