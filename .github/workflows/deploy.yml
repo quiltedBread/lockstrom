@@ -1,0 +1,43 @@
+name: Deploy to GitHub Pages
+on:
+  push:
+    branches:
+      - main # Or your default branch
+  workflow_dispatch: # Allows manual triggering from the Actions tab
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20" # Or your preferred Node.js version
+          cache: "npm" # Or 'yarn', 'pnpm', 'bun'
+
+      - name: Install dependencies
+        run: npm install # Or 'yarn install', 'pnpm install', 'bun install'
+
+      - name: Build Astro site
+        run: npm run build # Or your build command
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist # Or your build output directory
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
